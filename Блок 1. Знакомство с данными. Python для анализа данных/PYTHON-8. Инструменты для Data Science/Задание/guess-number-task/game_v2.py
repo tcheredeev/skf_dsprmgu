@@ -80,6 +80,21 @@ def random_predict_with_correction(number: int = 1) -> int:
             first_number = predict_number + 1
     return count
 
+def binary_tree(number: int = 1) -> int:
+    first_number = 0
+    last_number = 100 
+    count = 0
+    while first_number+1 != last_number:
+        count += 1
+        predict_number = (first_number + last_number) // 2
+        if predict_number == number:
+            break
+        if predict_number < number:
+            first_number = predict_number
+        else:
+            last_number = predict_number
+    return count
+
 
 def score_game(random_predict) -> int:
     """За какое количство попыток в среднем за 1000 подходов угадывает наш алгоритм
@@ -120,11 +135,13 @@ def score_game_v2(*random_predict_algorythms: Callable, tryes_count: int=1000) -
 
     for algorythm in random_predict_algorythms:
         name = algorythm.__name__
+        counts_list = []
         for number in random_array:
-            counts_list = algorythm(number)
+            counts_list.append(algorythm(number))
             
         score = int(np.mean(counts_list))
-        result.append((name, score))
+        min_, max_ = min(counts_list), max(counts_list)
+        result.append((name, score, min_, max_))
 
     # print(f"Ваш алгоритм угадывает число в среднем за: {score} попыток")
     return result
