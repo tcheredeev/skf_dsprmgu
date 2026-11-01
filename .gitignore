@@ -1,8 +1,8 @@
 __pycache__
-.venv
-venv
-.venv_*
+.venv*
 .credentials
-.venv3010
 
+requirements.txt
+
+!.gitignore
 
