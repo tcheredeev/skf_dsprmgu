@@ -15,4 +15,7 @@ scipy
 scikit-learn
 category_encoders
 statsmodels
-
+comet_ml
+unidecode
+nltk
+lightgbm
