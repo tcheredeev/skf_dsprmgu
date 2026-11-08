@@ -1,6 +1,6 @@
 ipykernel
-pandas
-numpy
+pandas == 2.0.1
+numpy == 1.24.2
 matplotlib
 seaborn
 plotly
@@ -12,8 +12,8 @@ PyQt5
 ydata_profiling
 statistics
 scipy
-scikit-learn
-category_encoders
+scikit-learn == 1.2.2
+category_encoders == 2.6.4
 statsmodels
 comet_ml
 unidecode
